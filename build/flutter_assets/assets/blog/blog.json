@@ -1,0 +1,859 @@
+{
+  "posts": [
+    {
+      "id": "async-await-javascript",
+      "metadata": {
+        "title": "Giải Thích về Async/Await Javascript trong 10 phút",
+        "readTime": "10 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-15T10:00:00Z",
+        "type": "TUTORIAL",
+        "tags": ["JavaScript", "Async/Await", "Clean Code", "Performance"],
+        "imagePath": "assets/images/async-await.png"
+      },
+      "content": {
+        "description": "Việc đặt tên biến hiệu quả là nền tảng cho code sạch và dễ bảo trì. Bài viết này sẽ hướng dẫn bạn những nguyên tắc và thủ thuật để đặt tên biến JavaScript một cách chuyên nghiệp.",
+        "sections": [
+          {
+            "h1": "1. Modern Declarations với let và const",
+            "p": "Một trong những bước đầu tiên để viết code JavaScript sạch là chú trọng đến việc khai báo biến. Thay vì dùng var, hãy sử dụng let cho các biến có thể thay đổi giá trị và const cho các hằng số.",
+            "code": {
+              "title": "Modern Variable Declarations",
+              "language": "javascript",
+              "content": "// Cách cũ (nên tránh)\nvar score = 0;\n\n// Cách hiện đại\nlet userScore = 0;      // giá trị có thể thay đổi\nconst MAX_SCORE = 100;  // hằng số"
+            }
+          },
+          {
+            "h2": "2. Nguyên Tắc Đặt Tên Chính",
+            "p": "Tên biến cần phải thể hiện rõ ý nghĩa và mục đích của nó. Tránh viết tắt và nên sử dụng từ ngữ đầy đủ để tăng tính dễ đọc.",
+            "code": {
+              "title": "Meaningful Names",
+              "language": "javascript",
+              "content": "// Không tốt\nlet x = 100;\nlet temp = { name: 'John' };\n\n// Tốt\nlet totalPrice = 100;\nlet userProfile = { name: 'John' };"
+            }
+          },
+          {
+            "h2": "3. Quy Ước Cho Các Loại Biến",
+            "h3": "Hằng Số",
+            "code": {
+              "title": "Constants",
+              "language": "javascript",
+              "content": "const API_KEY = 'your-key';\nconst MAX_ATTEMPTS = 5;\nconst DEFAULT_TIMEOUT = 3000;"
+            }
+          },
+          {
+            "h3": "Mảng và Collections",
+            "p": "Đối với mảng, hãy sử dụng danh từ số nhiều để dễ dàng nhận biết.",
+            "code": {
+              "title": "Arrays and Collections",
+              "language": "javascript",
+              "content": "const fruits = ['apple', 'banana'];\nconst userList = [];\nconst productCategories = new Set();"
+            }
+          },
+          {
+            "h3": "Boolean Variables",
+            "p": "Với biến boolean, hãy bắt đầu bằng các từ như is, has, hoặc can để thể hiện tính đúng sai.",
+            "code": {
+              "title": "Boolean Variables",
+              "language": "javascript",
+              "content": "let isActive = true;\nlet hasPermission = false;\nlet canEdit = true;\n\n// Tránh\nlet active = true;  // không rõ ràng\nlet permission = false;  // không thể hiện là boolean"
+            }
+          },
+          {
+            "h2": "4. Phạm Vi Biến",
+            "p": "Khi đặt tên biến, cần lưu ý đến phạm vi của biến. Sử dụng tiền tố hoặc hậu tố phù hợp để phân biệt.",
+            "code": {
+              "title": "Variable Scope",
+              "language": "javascript",
+              "content": "// Global variables\nconst globalConfig = {};\n\n// Class properties\nclass User {\n  constructor() {\n    this._privateData = {};\n    this.publicData = {};\n  }\n}"
+            }
+          },
+          {
+            "h2": "5. Các Trường Hợp Đặc Biệt",
+            "list": [
+              "Event handlers: Sử dụng handle hoặc on làm tiền tố (handleClick, onSubmit)",
+              "Callbacks: Thêm hậu tố Callback (fetchDataCallback)",
+              "Private properties: Sử dụng dấu gạch dưới (_privateMethod)",
+              "Interface: Thêm tiền tố I (IUserService)",
+              "Type: Thêm hậu tố Type (UserType)"
+            ]
+          },
+          {
+            "h2": "6. Lời Khuyên Thực Tế",
+            "list": [
+              "Ưu tiên sử dụng const khi có thể",
+              "Khai báo mỗi biến trên một dòng riêng",
+              "Tránh magic numbers bằng cách đặt tên có ý nghĩa",
+              "Sử dụng các từ mô tả chính xác (get, fetch, calculate)",
+              "Giữ tên biến ngắn gọn nhưng vẫn đầy đủ ý nghĩa"
+            ]
+          },
+          {
+            "blockquote": "Đặt tên biến tốt là một nghệ thuật cần thời gian để rèn luyện. Hãy nhớ rằng, code của bạn sẽ được đọc nhiều hơn là được viết, vì vậy hãy đầu tư thời gian để đặt tên biến một cách có ý nghĩa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "5-essential-javascript-concepts",
+      "metadata": {
+        "title": "5 Khái Niệm Javascript Thiết Yếu Cho Mọi Lập Trình Viên Web",
+        "readTime": "12 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-17T10:00:00Z",
+        "type": "ARTICLE",
+        "tags": ["JavaScript", "Web Development", "Programming Concepts", "Clean Code"],
+        "imagePath": "assets/images/js-concepts.png"
+      },
+      "content": {
+        "description": "Việc đặt tên biến hiệu quả là nền tảng cho code sạch và dễ bảo trì. Bài viết này sẽ hướng dẫn bạn những nguyên tắc và thủ thuật để đặt tên biến JavaScript một cách chuyên nghiệp.",
+        "sections": [
+          {
+            "h1": "1. Modern Declarations với let và const",
+            "p": "Một trong những bước đầu tiên để viết code JavaScript sạch là chú trọng đến việc khai báo biến. Thay vì dùng var, hãy sử dụng let cho các biến có thể thay đổi giá trị và const cho các hằng số.",
+            "code": {
+              "title": "Modern Variable Declarations",
+              "language": "javascript",
+              "content": "// Cách cũ (nên tránh)\nvar score = 0;\n\n// Cách hiện đại\nlet userScore = 0;      // giá trị có thể thay đổi\nconst MAX_SCORE = 100;  // hằng số"
+            }
+          },
+          {
+            "h2": "2. Nguyên Tắc Đặt Tên Chính",
+            "p": "Tên biến cần phải thể hiện rõ ý nghĩa và mục đích của nó. Tránh viết tắt và nên sử dụng từ ngữ đầy đủ để tăng tính dễ đọc.",
+            "code": {
+              "title": "Meaningful Names",
+              "language": "javascript",
+              "content": "// Không tốt\nlet x = 100;\nlet temp = { name: 'John' };\n\n// Tốt\nlet totalPrice = 100;\nlet userProfile = { name: 'John' };"
+            }
+          },
+          {
+            "h2": "3. Quy Ước Cho Các Loại Biến",
+            "h3": "Hằng Số",
+            "code": {
+              "title": "Constants",
+              "language": "javascript",
+              "content": "const API_KEY = 'your-key';\nconst MAX_ATTEMPTS = 5;\nconst DEFAULT_TIMEOUT = 3000;"
+            }
+          },
+          {
+            "h3": "Mảng và Collections",
+            "p": "Đối với mảng, hãy sử dụng danh từ số nhiều để dễ dàng nhận biết.",
+            "code": {
+              "title": "Arrays and Collections",
+              "language": "javascript",
+              "content": "const fruits = ['apple', 'banana'];\nconst userList = [];\nconst productCategories = new Set();"
+            }
+          },
+          {
+            "h3": "Boolean Variables",
+            "p": "Với biến boolean, hãy bắt đầu bằng các từ như is, has, hoặc can để thể hiện tính đúng sai.",
+            "code": {
+              "title": "Boolean Variables",
+              "language": "javascript",
+              "content": "let isActive = true;\nlet hasPermission = false;\nlet canEdit = true;\n\n// Tránh\nlet active = true;  // không rõ ràng\nlet permission = false;  // không thể hiện là boolean"
+            }
+          },
+          {
+            "h2": "4. Phạm Vi Biến",
+            "p": "Khi đặt tên biến, cần lưu ý đến phạm vi của biến. Sử dụng tiền tố hoặc hậu tố phù hợp để phân biệt.",
+            "code": {
+              "title": "Variable Scope",
+              "language": "javascript",
+              "content": "// Global variables\nconst globalConfig = {};\n\n// Class properties\nclass User {\n  constructor() {\n    this._privateData = {};\n    this.publicData = {};\n  }\n}"
+            }
+          },
+          {
+            "h2": "5. Các Trường Hợp Đặc Biệt",
+            "list": [
+              "Event handlers: Sử dụng handle hoặc on làm tiền tố (handleClick, onSubmit)",
+              "Callbacks: Thêm hậu tố Callback (fetchDataCallback)",
+              "Private properties: Sử dụng dấu gạch dưới (_privateMethod)",
+              "Interface: Thêm tiền tố I (IUserService)",
+              "Type: Thêm hậu tố Type (UserType)"
+            ]
+          },
+          {
+            "h2": "6. Lời Khuyên Thực Tế",
+            "list": [
+              "Ưu tiên sử dụng const khi có thể",
+              "Khai báo mỗi biến trên một dòng riêng",
+              "Tránh magic numbers bằng cách đặt tên có ý nghĩa",
+              "Sử dụng các từ mô tả chính xác (get, fetch, calculate)",
+              "Giữ tên biến ngắn gọn nhưng vẫn đầy đủ ý nghĩa"
+            ]
+          },
+          {
+            "blockquote": "Đặt tên biến tốt là một nghệ thuật cần thời gian để rèn luyện. Hãy nhớ rằng, code của bạn sẽ được đọc nhiều hơn là được viết, vì vậy hãy đầu tư thời gian để đặt tên biến một cách có ý nghĩa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "javascript-naming-conventions",
+      "metadata": {
+        "title": "Bí Quyết Đặt Tên Biến JavaScript: Hướng Dẫn Thực Tiễn Tốt Nhất",
+        "readTime": "8 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-18T10:00:00Z",
+        "type": "GUIDE",
+        "tags": ["JavaScript", "Clean Code", "Best Practices", "Code Style"],
+        "imagePath": "assets/images/js-naming.png"
+      },
+      "content": {
+        "description": "Việc đặt tên biến hiệu quả là nền tảng cho code sạch và dễ bảo trì. Bài viết này sẽ hướng dẫn bạn những nguyên tắc và thủ thuật để đặt tên biến JavaScript một cách chuyên nghiệp.",
+        "sections": [
+          {
+            "h1": "1. Modern Declarations với let và const",
+            "p": "Một trong những bước đầu tiên để viết code JavaScript sạch là chú trọng đến việc khai báo biến. Thay vì dùng var, hãy sử dụng let cho các biến có thể thay đổi giá trị và const cho các hằng số.",
+            "code": {
+              "title": "Modern Variable Declarations",
+              "language": "javascript",
+              "content": "// Cách cũ (nên tránh)\nvar score = 0;\n\n// Cách hiện đại\nlet userScore = 0;      // giá trị có thể thay đổi\nconst MAX_SCORE = 100;  // hằng số"
+            }
+          },
+          {
+            "h2": "2. Nguyên Tắc Đặt Tên Chính",
+            "p": "Tên biến cần phải thể hiện rõ ý nghĩa và mục đích của nó. Tránh viết tắt và nên sử dụng từ ngữ đầy đủ để tăng tính dễ đọc.",
+            "code": {
+              "title": "Meaningful Names",
+              "language": "javascript",
+              "content": "// Không tốt\nlet x = 100;\nlet temp = { name: 'John' };\n\n// Tốt\nlet totalPrice = 100;\nlet userProfile = { name: 'John' };"
+            }
+          },
+          {
+            "h2": "3. Quy Ước Cho Các Loại Biến",
+            "h3": "Hằng Số",
+            "code": {
+              "title": "Constants",
+              "language": "javascript",
+              "content": "const API_KEY = 'your-key';\nconst MAX_ATTEMPTS = 5;\nconst DEFAULT_TIMEOUT = 3000;"
+            }
+          },
+          {
+            "h3": "Mảng và Collections",
+            "p": "Đối với mảng, hãy sử dụng danh từ số nhiều để dễ dàng nhận biết.",
+            "code": {
+              "title": "Arrays and Collections",
+              "language": "javascript",
+              "content": "const fruits = ['apple', 'banana'];\nconst userList = [];\nconst productCategories = new Set();"
+            }
+          },
+          {
+            "h3": "Boolean Variables",
+            "p": "Với biến boolean, hãy bắt đầu bằng các từ như is, has, hoặc can để thể hiện tính đúng sai.",
+            "code": {
+              "title": "Boolean Variables",
+              "language": "javascript",
+              "content": "let isActive = true;\nlet hasPermission = false;\nlet canEdit = true;\n\n// Tránh\nlet active = true;  // không rõ ràng\nlet permission = false;  // không thể hiện là boolean"
+            }
+          },
+          {
+            "h2": "4. Phạm Vi Biến",
+            "p": "Khi đặt tên biến, cần lưu ý đến phạm vi của biến. Sử dụng tiền tố hoặc hậu tố phù hợp để phân biệt.",
+            "code": {
+              "title": "Variable Scope",
+              "language": "javascript",
+              "content": "// Global variables\nconst globalConfig = {};\n\n// Class properties\nclass User {\n  constructor() {\n    this._privateData = {};\n    this.publicData = {};\n  }\n}"
+            }
+          },
+          {
+            "h2": "5. Các Trường Hợp Đặc Biệt",
+            "list": [
+              "Event handlers: Sử dụng handle hoặc on làm tiền tố (handleClick, onSubmit)",
+              "Callbacks: Thêm hậu tố Callback (fetchDataCallback)",
+              "Private properties: Sử dụng dấu gạch dưới (_privateMethod)",
+              "Interface: Thêm tiền tố I (IUserService)",
+              "Type: Thêm hậu tố Type (UserType)"
+            ]
+          },
+          {
+            "h2": "6. Lời Khuyên Thực Tế",
+            "list": [
+              "Ưu tiên sử dụng const khi có thể",
+              "Khai báo mỗi biến trên một dòng riêng",
+              "Tránh magic numbers bằng cách đặt tên có ý nghĩa",
+              "Sử dụng các từ mô tả chính xác (get, fetch, calculate)",
+              "Giữ tên biến ngắn gọn nhưng vẫn đầy đủ ý nghĩa"
+            ]
+          },
+          {
+            "blockquote": "Đặt tên biến tốt là một nghệ thuật cần thời gian để rèn luyện. Hãy nhớ rằng, code của bạn sẽ được đọc nhiều hơn là được viết, vì vậy hãy đầu tư thời gian để đặt tên biến một cách có ý nghĩa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "javascript-type-coercion",
+      "metadata": {
+        "title": "Giải Mã Ép Kiểu Trong JavaScript: Từ Cơ Bản Đến Chuyên Sâu",
+        "readTime": "15 MIN READ", 
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-19T10:00:00Z",
+        "type": "ARTICLE",
+        "tags": ["JavaScript", "Type Coercion", "Clean Code", "Best Practices"],
+        "imagePath": "assets/images/js-coercion.png"
+      },
+      "content": {
+        "description": "Trong JavaScript, các biến không yêu cầu khai báo kiểu cụ thể và có thể chứa giá trị của bất kỳ kiểu dữ liệu nào. Bài viết này sẽ giúp bạn hiểu sâu về cơ chế ép kiểu trong JavaScript.",
+        "sections": [
+          {
+            "h1": "Vậy ép kiểu là gì?",
+            "p": "Ép kiểu đề cập đến việc chuyển đổi tự động hoặc thủ công một giá trị từ kiểu dữ liệu này sang kiểu dữ liệu khác. Trong JavaScript, ép kiểu có thể thuộc hai loại:",
+            "list": [
+              "Ép kiểu ngầm: Khi JavaScript tự động chuyển đổi một giá trị",
+              "Ép kiểu tường minh: Khi bạn cố ý chuyển đổi một giá trị"
+            ]
+          },
+          {
+            "h2": "Kiểu dữ liệu trong JavaScript",
+            "h3": "1. Kiểu nguyên thủy:",
+            "list": [
+              "Number (ví dụ: 42, 3.14, NaN)",
+              "String (ví dụ: \"hello\", '123')",
+              "Boolean (ví dụ: true, false)",
+              "Undefined",
+              "Null",
+              "Symbol",
+              "BigInt (ví dụ: 123n)"
+            ]
+          },
+          {
+            "h2": "Ép kiểu ngầm",
+            "p": "Ép kiểu ngầm xảy ra khi JavaScript tự động chuyển đổi kiểu của một giá trị sang một kiểu khác để phù hợp với các yêu cầu của một phép toán hoặc biểu thức.",
+            "code": {
+              "title": "Ép kiểu chuỗi với toán tử +",
+              "language": "javascript",
+              "content": "console.log(3 + \"7\"); \n// Output: \"37\" (3 is coerced to \"3\")\n\nconsole.log(\"7\" - 3); \n// Output: 4 (string \"7\" coerced to number 7)\n\nconsole.log(true * 3);\n// Output: 3 (true coerced to 1)"
+            }
+          },
+          {
+            "h3": "Ép kiểu trong điều kiện",
+            "p": "Trong JavaScript khi một giá trị được sử dụng trong một điều kiện, nó sẽ tự động được chuyển đổi thành boolean.",
+            "code": {
+              "title": "Truthy và Falsy Values",
+              "language": "javascript",
+              "content": "if (\"Hello\") { \n  console.log(\"This is truthy!\"); // This will run\n}\n\nif (0) { \n  console.log(\"This won't run\"); // This won't run\n}\n\nif (!0) { \n  console.log(\"This will run\"); // This will run\n}"
+            }
+          },
+          {
+            "h2": "Ép kiểu tường minh",
+            "p": "Ép kiểu tường minh xảy ra khi bạn cố ý chuyển đổi một giá trị từ kiểu này sang kiểu khác.",
+            "code": {
+              "title": "Chuyển đổi sang Số",
+              "language": "javascript",
+              "content": "// Sử dụng Number()\nconsole.log(Number(\"37\")); // Output: 37\n\n// Sử dụng toán tử đơn nhất +\nconsole.log(+\"37\"); // Output: 37\nconsole.log(+true); // Output: 1\n\n// Sử dụng parseInt() hoặc parseFloat()\nconsole.log(parseInt(\"123.45\")); // Output: 123\nconsole.log(parseFloat(\"123.45\")); // Output: 123.45"
+            }
+          },
+          {
+            "h2": "Tại sao ép kiểu ngầm có thể gây ra vấn đề?",
+            "list": [
+              "Kết quả không mong muốn khi làm việc với các kiểu dữ liệu khác nhau",
+              "Trộn kiểu dữ liệu có thể dẫn đến lỗi",
+              "Gỡ lỗi khó khăn khi không biết nơi xảy ra chuyển đổi",
+              "Giá trị Falsy và so sánh kiểu có thể gây nhầm lẫn"
+            ]
+          },
+          {
+            "h2": "Cách tránh các vấn đề về ép kiểu",
+            "list": [
+              "Sử dụng so sánh nghiêm ngặt (===)",
+              "Tường minh khi chuyển đổi kiểu",
+              "Tránh trộn kiểu trong các phép toán",
+              "Xác thực đầu vào kỹ lưỡng"
+            ],
+            "code": {
+              "title": "Best Practices",
+              "language": "javascript",
+              "content": "// Sử dụng === thay vì ==\nconsole.log(3 === \"3\"); // false\n\n// Chuyển đổi kiểu tường minh\nconsole.log(7 + Number(\"3\")); // 10\n\n// Xác thực đầu vào\nfunction parseAge(input) {\n  const age = Number(input);\n  if (isNaN(age)) {\n    throw new Error(\"Invalid age\");\n  }\n  return age;\n}"
+            }
+          },
+          {
+            "blockquote": "Ép kiểu ngầm trong JavaScript có thể hữu ích, nhưng nó cũng có thể dẫn đến hành vi không mong muốn. Để viết code an toàn và dễ bảo trì, hãy sử dụng so sánh nghiêm ngặt và chuyển đổi kiểu tường minh khi có thể."
+          }
+        ]
+      }
+    },
+    {
+      "id": "20-javascript-interview-concepts",
+      "metadata": {
+        "title": "20 Khái Niệm JavaScript Quan Trọng Cần Biết Khi Đi Phỏng Vấn",
+        "readTime": "20 MIN READ",
+        "author": "Adwaith asok", 
+        "publishDate": "2024-03-20T10:00:00Z",
+        "type": "GUIDE",
+        "tags": ["JavaScript", "Interview", "Programming Concepts", "Career"],
+        "imagePath": "assets/images/js-interview.png"
+      },
+      "content": {
+        "description": "Khi nói đến các buổi phỏng vấn JavaScript, nhà tuyển dụng tìm kiếm cả kiến thức thực tế lẫn lý thuyết. Bài viết này tổng hợp 20 khái niệm JavaScript cốt lõi được giải thích bằng các ví dụ ngắn gọn.",
+        "sections": [
+          {
+            "h1": "1. Closures",
+            "p": "Closure là một hàm ghi nhớ các biến bên ngoài của nó ngay cả sau khi hàm bên ngoài đã hoàn thành việc thực thi.",
+            "code": {
+              "title": "Closure Example",
+              "language": "javascript",
+              "content": "function outer() {\n  let count = 0;\n  return function inner() {\n    count++;\n    return count;\n  };\n}\n\nconst counter = outer();\nconsole.log(counter()); // 1\nconsole.log(counter()); // 2"
+            }
+          },
+          {
+            "h2": "2. Hoisting",
+            "p": "Trong Hoisting, các khai báo biến và hàm trong JavaScript được \"nâng\" lên đầu phạm vi của chúng.",
+            "code": {
+              "title": "Hoisting Example",
+              "language": "javascript",
+              "content": "console.log(greet()); // Hello!\n\nfunction greet() {\n  return \"Hello!\";\n}\n\nconsole.log(num); // undefined\nvar num = 5;"
+            }
+          },
+          {
+            "h2": "3. Event Loop & Callbacks",
+            "p": "JavaScript là đơn luồng và vòng lặp sự kiện (Event Loop) cho phép các hoạt động không đồng bộ sử dụng các hàm gọi lại (Callbacks).",
+            "code": {
+              "title": "Event Loop Example",
+              "language": "javascript",
+              "content": "console.log(\"Start\");\nsetTimeout(() => console.log(\"Async operation\"), 1000);\nconsole.log(\"End\");\n\n// Output: Start, End, Async operation"
+            }
+          },
+          {
+            "h2": "4. Promises",
+            "p": "Promises xử lý các hoạt động không đồng bộ, với các trạng thái: pending, fulfilled và rejected.",
+            "code": {
+              "title": "Promise Example",
+              "language": "javascript",
+              "content": "let fetchData = new Promise((resolve, reject) => {\n  setTimeout(() => resolve(\"Data received!\"), 1000);\n});\n\nfetchData.then(data => console.log(data)); // Data received!"
+            }
+          },
+          {
+            "h2": "5. Async/Await",
+            "p": "Async/Await đơn giản hóa việc xử lý promise.",
+            "code": {
+              "title": "Async/Await Example",
+              "language": "javascript",
+              "content": "async function fetchData() {\n  let data = await new Promise(resolve => \n    setTimeout(() => resolve(\"Data\"), 1000)\n  );\n  console.log(data);\n}\n\nfetchData(); // Data"
+            }
+          },
+          {
+            "h2": "20. Currying",
+            "p": "Currying biến đổi một hàm với nhiều đối số thành một chuỗi các hàm với một đối số duy nhất.",
+            "code": {
+              "title": "Currying Example",
+              "language": "javascript",
+              "content": "function multiply(a) {\n  return function(b) {\n    return a * b;\n  };\n}\n\nconst double = multiply(2);\nconsole.log(double(5)); // 10"
+            }
+          },
+          {
+            "blockquote": "Hiểu sâu về những khái niệm này không chỉ giúp bạn vượt qua các cuộc phỏng vấn mà còn giúp bạn trở thành một lập trình viên JavaScript tốt hơn. Hãy thực hành các ví dụ và áp dụng chúng vào dự án thực tế."
+          }
+        ]
+      }
+    },
+    {
+      "id": "java-design-patterns",
+      "metadata": {
+        "title": "10 Design Pattern Phổ Biến Trong Java Mà Mọi Developer Nên Biết",
+        "readTime": "15 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-21T10:00:00Z",
+        "type": "TUTORIAL",
+        "tags": ["Java", "Design Patterns", "Clean Code", "Software Architecture"],
+        "imagePath": "assets/images/java-patterns.png"
+      },
+      "content": {
+        "description": "Design Pattern là các giải pháp đã được kiểm chứng cho các vấn đề thường gặp trong thiết kế phần mềm. Bài viết này sẽ giới thiệu 10 Design Pattern phổ biến nhất trong Java với ví dụ cụ thể.",
+        "sections": [
+          {
+            "h1": "1. Singleton Pattern",
+            "p": "Singleton đảm bảo một class chỉ có một instance duy nhất và cung cấp một điểm truy cập toàn cục đến instance đó. Pattern này thường được sử dụng cho các lớp cấu hình, connection pools, và caches.",
+            "code": {
+              "title": "Singleton Example",
+              "language": "java",
+              "content": "public class DatabaseConnection {\n    private static DatabaseConnection instance;\n    private String url;\n    \n    private DatabaseConnection() {\n        this.url = \"jdbc:mysql://localhost:3306/mydb\";\n    }\n    \n    public static synchronized DatabaseConnection getInstance() {\n        if (instance == null) {\n            instance = new DatabaseConnection();\n        }\n        return instance;\n    }\n    \n    public void connect() {\n        System.out.println(\"Connecting to \" + url);\n    }\n}"
+            }
+          },
+          {
+            "h2": "2. Factory Method Pattern",
+            "p": "Factory Method định nghĩa một interface để tạo đối tượng nhưng để các lớp con quyết định lớp nào sẽ được khởi tạo. Pattern này giúp code linh hoạt hơn và dễ mở rộng.",
+            "code": {
+              "title": "Factory Method Example",
+              "language": "java",
+              "content": "// Product interface\ninterface Animal {\n    void makeSound();\n}\n\n// Concrete products\nclass Dog implements Animal {\n    @Override\n    public void makeSound() {\n        System.out.println(\"Woof!\");\n    }\n}\n\nclass Cat implements Animal {\n    @Override\n    public void makeSound() {\n        System.out.println(\"Meow!\");\n    }\n}\n\n// Factory\nclass AnimalFactory {\n    public Animal createAnimal(String type) {\n        if (type.equalsIgnoreCase(\"dog\")) {\n            return new Dog();\n        } else if (type.equalsIgnoreCase(\"cat\")) {\n            return new Cat();\n        }\n        throw new IllegalArgumentException(\"Invalid animal type\");\n    }\n}"
+            }
+          },
+          {
+            "h2": "3. Observer Pattern",
+            "p": "Observer Pattern định nghĩa một phụ thuộc một-nhiều giữa các đối tượng để khi một đối tượng thay đổi trạng thái, tất cả các phụ thuộc của nó được thông báo và cập nhật tự động.",
+            "code": {
+              "title": "Observer Pattern Example",
+              "language": "java",
+              "content": "import java.util.*;\n\n// Subject interface\ninterface Subject {\n    void registerObserver(Observer o);\n    void removeObserver(Observer o);\n    void notifyObservers();\n}\n\n// Observer interface\ninterface Observer {\n    void update(String message);\n}\n\n// Concrete Subject\nclass NewsAgency implements Subject {\n    private List<Observer> observers = new ArrayList<>();\n    private String news;\n\n    @Override\n    public void registerObserver(Observer o) {\n        observers.add(o);\n    }\n\n    @Override\n    public void removeObserver(Observer o) {\n        observers.remove(o);\n    }\n\n    @Override\n    public void notifyObservers() {\n        for (Observer o : observers) {\n            o.update(news);\n        }\n    }\n\n    public void setNews(String news) {\n        this.news = news;\n        notifyObservers();\n    }\n}"
+            }
+          },
+          {
+            "h2": "4. Strategy Pattern",
+            "p": "Strategy Pattern cho phép định nghĩa một nhóm thuật toán, đóng gói từng thuật toán và làm cho chúng có thể hoán đổi cho nhau. Pattern này cho phép thuật toán thay đổi độc lập với client sử dụng nó.",
+            "code": {
+              "title": "Strategy Pattern Example",
+              "language": "java",
+              "content": "// Strategy interface\ninterface PaymentStrategy {\n    void pay(int amount);\n}\n\n// Concrete strategies\nclass CreditCardPayment implements PaymentStrategy {\n    private String cardNumber;\n\n    public CreditCardPayment(String cardNumber) {\n        this.cardNumber = cardNumber;\n    }\n\n    @Override\n    public void pay(int amount) {\n        System.out.println(amount + \" paid with credit card \" + cardNumber);\n    }\n}\n\nclass PayPalPayment implements PaymentStrategy {\n    private String email;\n\n    public PayPalPayment(String email) {\n        this.email = email;\n    }\n\n    @Override\n    public void pay(int amount) {\n        System.out.println(amount + \" paid using PayPal account \" + email);\n    }\n}"
+            }
+          },
+          {
+            "h2": "5. Builder Pattern",
+            "p": "Builder Pattern được sử dụng để xây dựng một đối tượng phức tạp bước theo bước. Pattern này hữu ích khi một đối tượng cần được tạo với nhiều tham số tùy chọn.",
+            "code": {
+              "title": "Builder Pattern Example",
+              "language": "java",
+              "content": "public class User {\n    private final String firstName;     // required\n    private final String lastName;      // required\n    private final int age;             // optional\n    private final String phone;         // optional\n    private final String address;       // optional\n\n    private User(UserBuilder builder) {\n        this.firstName = builder.firstName;\n        this.lastName = builder.lastName;\n        this.age = builder.age;\n        this.phone = builder.phone;\n        this.address = builder.address;\n    }\n\n    public static class UserBuilder {\n        private final String firstName;\n        private final String lastName;\n        private int age;\n        private String phone;\n        private String address;\n\n        public UserBuilder(String firstName, String lastName) {\n            this.firstName = firstName;\n            this.lastName = lastName;\n        }\n\n        public UserBuilder age(int age) {\n            this.age = age;\n            return this;\n        }\n\n        public UserBuilder phone(String phone) {\n            this.phone = phone;\n            return this;\n        }\n\n        public UserBuilder address(String address) {\n            this.address = address;\n            return this;\n        }\n\n        public User build() {\n            return new User(this);\n        }\n    }\n}"
+            }
+          },
+          {
+            "blockquote": "Design Pattern không phải là giải pháp cho mọi vấn đề. Hãy sử dụng chúng một cách thông minh và chỉ khi thực sự cần thiết. Việc lạm dụng pattern có thể dẫn đến code phức tạp không cần thiết."
+          }
+        ]
+      }
+    },
+    {
+      "id": "java-generics-mastering",
+      "metadata": {
+        "title": "Tổng Quan Về Generics Trong Java: Từ Cơ Bản Đến Nâng Cao",
+        "readTime": "20 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-22T10:00:00Z",
+        "type": "TUTORIAL",
+        "tags": ["Java", "Generics", "Interview", "Clean Code"],
+        "imagePath": "assets/images/java-generics.png"
+      },
+      "content": {
+        "description": "Generics là một trong những tính năng quan trọng của Java, cho phép bạn viết code linh hoạt và an toàn về kiểu dữ liệu. Bài viết này sẽ giúp bạn hiểu sâu về Generics từ cơ bản đến nâng cao.",
+        "sections": [
+          {
+            "h1": "Generics Là Gì?",
+            "p": "Generics cho phép bạn định nghĩa các lớp, interface và phương thức có thể làm việc với nhiều kiểu dữ liệu khác nhau, đồng thời đảm bảo tính an toàn về kiểu dữ liệu tại thời điểm biên dịch.",
+            "code": {
+              "title": "So sánh code có và không có Generics",
+              "language": "java",
+              "content": "// Không sử dụng Generics\nList list = new ArrayList();\nlist.add(\"Hello\");\nString s = (String) list.get(0); // Phải ép kiểu\n\n// Sử dụng Generics\nList<String> list = new ArrayList<>();\nlist.add(\"Hello\");\nString s = list.get(0); // Không cần ép kiểu"
+            }
+          },
+          {
+            "h2": "Tại Sao Nên Sử Dụng Generics?",
+            "list": [
+              "An toàn về kiểu dữ liệu: Phát hiện lỗi tại thời điểm biên dịch",
+              "Không cần ép kiểu: Tránh được ClassCastException",
+              "Code có thể tái sử dụng: Viết một lần, dùng cho nhiều kiểu dữ liệu"
+            ],
+            "code": {
+              "title": "Ví dụ về tính tái sử dụng",
+              "language": "java",
+              "content": "public class GenericSorting {\n  public static <T extends Comparable<T>> void bubbleSort(T[] array) {\n    for (int i = 0; i < array.length - 1; i++) {\n      for (int j = 0; j < array.length - i - 1; j++) {\n        if (array[j].compareTo(array[j + 1]) > 0) {\n          T temp = array[j];\n          array[j] = array[j + 1];\n          array[j + 1] = temp;\n        }\n      }\n    }\n  }\n\n  public static void main(String[] args) {\n    Integer[] numbers = {5, 2, 8, 1, 9};\n    String[] names = {\"John\", \"Alice\", \"Bob\"};\n    \n    bubbleSort(numbers); // Sắp xếp số\n    bubbleSort(names);   // Sắp xếp chuỗi\n  }\n}"
+            }
+          },
+          {
+            "h2": "Generic Classes",
+            "p": "Generic class cho phép bạn định nghĩa một lớp có thể làm việc với bất kỳ kiểu dữ liệu nào được chỉ định bởi người dùng.",
+            "code": {
+              "title": "Ví dụ về Generic Class",
+              "language": "java",
+              "content": "public class Box<T> {\n    private T content;\n\n    public void set(T content) {\n        this.content = content;\n    }\n\n    public T get() {\n        return content;\n    }\n}\n\n// Sử dụng\nBox<String> stringBox = new Box<>();\nstringBox.set(\"Hello Generics\");\nString message = stringBox.get();"
+            }
+          },
+          {
+            "h2": "Bounded Type Parameters",
+            "p": "Bạn có thể giới hạn các kiểu dữ liệu có thể được sử dụng trong generic bằng cách sử dụng bounded type parameters.",
+            "code": {
+              "title": "Bounded Type Example",
+              "language": "java",
+              "content": "public class Calculator<T extends Number> {\n    private T number;\n\n    public Calculator(T number) {\n        this.number = number;\n    }\n\n    public double getDoubleValue() {\n        return number.doubleValue();\n    }\n}\n\n// Sử dụng\nCalculator<Integer> intCalc = new Calculator<>(5);\nCalculator<Double> doubleCalc = new Calculator<>(5.5);\n// Calculator<String> strCalc = new Calculator<>(\"5\"); // Lỗi biên dịch"
+            }
+          },
+          {
+            "h2": "Wildcards",
+            "p": "Wildcards (ký tự ?) cho phép bạn làm việc với các kiểu dữ liệu không xác định trong generics.",
+            "code": {
+              "title": "Các loại Wildcard",
+              "language": "java",
+              "content": "// Unbounded Wildcard\npublic void printList(List<?> list) {\n    for (Object item : list) {\n        System.out.println(item);\n    }\n}\n\n// Upper Bounded Wildcard\npublic double sum(List<? extends Number> list) {\n    double sum = 0;\n    for (Number n : list) {\n        sum += n.doubleValue();\n    }\n    return sum;\n}\n\n// Lower Bounded Wildcard\npublic void addIntegers(List<? super Integer> list) {\n    list.add(1);\n    list.add(2);\n}"
+            }
+          },
+          {
+            "h2": "Câu Hỏi Phỏng Vấn Thường Gặp",
+            "list": [
+              "1. Type Erasure là gì và tại sao nó tồn tại?",
+              "2. Sự khác biệt giữa <? extends T> và <? super T>?",
+              "3. Tại sao không thể tạo mảng generic trong Java?",
+              "4. PECS (Producer Extends, Consumer Super) là gì?",
+              "5. Làm thế nào để xử lý raw types trong code legacy?"
+            ]
+          },
+          {
+            "blockquote": "Generics là một công cụ mạnh mẽ trong Java, giúp code của bạn an toàn hơn và linh hoạt hơn. Tuy nhiên, cần sử dụng chúng một cách thông minh và hiểu rõ các khái niệm cơ bản để tránh các vấn đề phức tạp không cần thiết."
+          }
+        ]
+      }
+    },
+    {
+      "id": "java-oop-concepts",
+      "metadata": {
+        "title": "Overloading, Overriding và Abstract Trong Java: Hướng Dẫn Chi Tiết",
+        "readTime": "15 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-23T10:00:00Z",
+        "type": "TUTORIAL",
+        "tags": ["Java", "OOP", "Clean Code", "Programming Concepts"],
+        "imagePath": "assets/images/java-oop.png"
+      },
+      "content": {
+        "description": "Overloading, Overriding và Abstract là những khái niệm cốt lõi trong lập trình hướng đối tượng với Java. Bài viết này sẽ giúp bạn hiểu rõ về cách sử dụng và sự khác biệt giữa chúng.",
+        "sections": [
+          {
+            "h1": "1. Method Overloading",
+            "p": "Method Overloading là khả năng định nghĩa nhiều phương thức cùng tên nhưng khác nhau về số lượng, kiểu hoặc thứ tự tham số trong cùng một lớp. Đây là một ví dụ của tính đa hình tại thời điểm biên dịch (compile-time polymorphism).",
+            "code": {
+              "title": "Ví dụ về Method Overloading",
+              "language": "java",
+              "content": "public class Calculator {\n    // Cộng hai số nguyên\n    public int add(int a, int b) {\n        return a + b;\n    }\n\n    // Cộng ba số nguyên\n    public int add(int a, int b, int c) {\n        return a + b + c;\n    }\n\n    // Cộng hai số thực\n    public double add(double a, double b) {\n        return a + b;\n    }\n\n    // Nối hai chuỗi\n    public String add(String a, String b) {\n        return a + b;\n    }\n}\n\n// Sử dụng\nCalculator calc = new Calculator();\nSystem.out.println(calc.add(5, 3));        // 8\nSystem.out.println(calc.add(5, 3, 2));     // 10\nSystem.out.println(calc.add(5.5, 3.5));    // 9.0\nSystem.out.println(calc.add(\"Hello \", \"World\")); // Hello World"
+            }
+          },
+          {
+            "h2": "Khi nào nên sử dụng Overloading?",
+            "list": [
+              "Khi muốn thực hiện cùng một chức năng với các kiểu dữ liệu khác nhau",
+              "Khi cần xử lý số lượng tham số khác nhau cho cùng một thao tác",
+              "Để tăng tính rõ ràng và dễ đọc của code",
+              "Khi muốn cung cấp nhiều cách khởi tạo đối tượng (constructor overloading)"
+            ]
+          },
+          {
+            "h2": "2. Method Overriding",
+            "p": "Method Overriding là việc lớp con định nghĩa lại phương thức đã được định nghĩa trong lớp cha. Đây là một ví dụ của tính đa hình tại thời điểm chạy (runtime polymorphism).",
+            "code": {
+              "title": "Ví dụ về Method Overriding",
+              "language": "java",
+              "content": "class Animal {\n    public void makeSound() {\n        System.out.println(\"Some sound\");\n    }\n}\n\nclass Dog extends Animal {\n    @Override\n    public void makeSound() {\n        System.out.println(\"Woof!\");\n    }\n}\n\nclass Cat extends Animal {\n    @Override\n    public void makeSound() {\n        System.out.println(\"Meow!\");\n    }\n}\n\n// Sử dụng\nAnimal dog = new Dog();\nAnimal cat = new Cat();\n\ndog.makeSound(); // Output: Woof!\ncat.makeSound(); // Output: Meow!"
+            }
+          },
+          {
+            "h3": "Quy tắc quan trọng khi Override",
+            "list": [
+              "Phương thức trong lớp con phải có cùng tên và tham số với phương thức lớp cha",
+              "Kiểu trả về phải giống hoặc là kiểu con của kiểu trả về trong lớp cha",
+              "Không thể override phương thức final hoặc static",
+              "Phạm vi truy cập phải rộng hơn hoặc bằng phương thức gốc"
+            ]
+          },
+          {
+            "h2": "3. Abstract Class và Method",
+            "p": "Abstract class là một lớp không thể được khởi tạo trực tiếp và có thể chứa cả phương thức abstract (không có thân hàm) và phương thức thông thường. Abstract method buộc các lớp con phải implement.",
+            "code": {
+              "title": "Ví dụ về Abstract Class",
+              "language": "java",
+              "content": "abstract class Shape {\n    protected String color;\n\n    // Constructor\n    public Shape(String color) {\n        this.color = color;\n    }\n\n    // Phương thức abstract - bắt buộc override\n    abstract double getArea();\n\n    // Phương thức thông thường\n    public String getColor() {\n        return color;\n    }\n}"
+            }
+          },
+          {
+            "h3": "Khi nào nên sử dụng Abstract?",
+            "list": [
+              "Khi muốn chia sẻ code giữa nhiều lớp có liên quan",
+              "Khi có các phương thức chung nhưng cách thực hiện khác nhau ở mỗi lớp con",
+              "Khi muốn bắt buộc các lớp con phải implement một số phương thức nhất định",
+              "Khi cần định nghĩa một template cho một nhóm các lớp liên quan"
+            ]
+          },
+          {
+            "h2": "So Sánh Overloading, Overriding và Abstract",
+            "code": {
+              "title": "Bảng so sánh",
+              "language": "text",
+              "content": "Overloading:\n- Cùng tên, khác tham số\n- Xảy ra trong cùng một lớp\n- Compile-time polymorphism\n- Không cần kế thừa\n\nOverriding:\n- Cùng tên, cùng tham số\n- Xảy ra giữa lớp cha và lớp con\n- Runtime polymorphism\n- Yêu cầu kế thừa\n\nAbstract:\n- Định nghĩa template\n- Không thể khởi tạo trực tiếp\n- Có thể chứa cả abstract và non-abstract methods\n- Bắt buộc implement abstract methods"
+            }
+          },
+          {
+            "blockquote": "Hiểu rõ và sử dụng đúng Overloading, Overriding và Abstract là chìa khóa để thiết kế code linh hoạt và dễ bảo trì. Mỗi khái niệm có những ưu điểm và use case riêng, việc chọn đúng công cụ cho đúng tình huống sẽ giúp code của bạn tốt hơn."
+          }
+        ]
+      }
+    },
+    {
+      "id": "java-oop-interview",
+      "metadata": {
+        "title": "Top 20 Câu Hỏi Phỏng Vấn Java OOP Phổ Biến Nhất",
+        "readTime": "25 MIN READ",
+        "author": "Adwaith asok",
+        "publishDate": "2024-03-24T10:00:00Z",
+        "type": "INTERVIEW",
+        "tags": ["Java", "OOP", "Interview Questions", "Programming Concepts"],
+        "imagePath": "assets/images/java-interview.png"
+      },
+      "content": {
+        "description": "Tổng hợp 20 câu hỏi phỏng vấn về Java OOP thường gặp nhất, kèm theo câu trả lời chi tiết và ví dụ minh họa. Bài viết này sẽ giúp bạn chuẩn bị tốt cho các cuộc phỏng vấn Java.",
+        "sections": [
+          {
+            "h1": "1. Lập Trình Hướng Đối Tượng Là Gì?",
+            "p": "Lập trình hướng đối tượng (OOP) là một phương pháp lập trình dựa trên khái niệm về lớp và đối tượng. Nó tập trung vào các đối tượng thao tác hơn là logic để thao tác chúng.",
+            "list": [
+              "Giúp code dễ quản lý và bảo trì",
+              "Cho phép tái sử dụng code thông qua kế thừa",
+              "Tăng tính module hóa của ứng dụng",
+              "Ẩn chi tiết triển khai thông qua đóng gói"
+            ],
+            "code": {
+              "title": "Ví dụ về Class và Object",
+              "language": "java",
+              "content": "// Định nghĩa class\nclass Car {\n    // Thuộc tính\n    private String brand;\n    private String color;\n    \n    // Constructor\n    public Car(String brand, String color) {\n        this.brand = brand;\n        this.color = color;\n    }\n    \n    // Phương thức\n    public void start() {\n        System.out.println(brand + \" car is starting\");\n    }\n}\n\n// Tạo đối tượng\nCar myCar = new Car(\"Toyota\", \"Red\");\nmyCar.start(); // Output: Toyota car is starting"
+            }
+          },
+          {
+            "h2": "2. Bốn Tính Chất Của OOP",
+            "list": [
+              "Tính đóng gói (Encapsulation)",
+              "Tính kế thừa (Inheritance)",
+              "Tính đa hình (Polymorphism)",
+              "Tính trừu tượng (Abstraction)"
+            ],
+            "code": {
+              "title": "Ví dụ về 4 tính chất OOP",
+              "language": "java",
+              "content": "// Tính đóng gói\nclass BankAccount {\n    private double balance; // Thuộc tính private\n    \n    public void deposit(double amount) {\n        if (amount > 0) {\n            balance += amount;\n        }\n    }\n}\n\n// Tính kế thừa\nclass Animal {\n    void makeSound() { }\n}\n\nclass Dog extends Animal {\n    void makeSound() {\n        System.out.println(\"Woof!\");\n    }\n}\n\n// Tính đa hình\nAnimal animal = new Dog(); // Upcasting\nanimal.makeSound(); // Output: Woof!\n\n// Tính trừu tượng\nabstract class Shape {\n    abstract double getArea();\n}"
+            }
+          },
+          {
+            "h2": "3-4. Class và Object",
+            "p": "Class là bản thiết kế cho object, định nghĩa các thuộc tính và phương thức mà object sẽ có. Object là thể hiện cụ thể của class.",
+            "code": {
+              "title": "Class và Object Example",
+              "language": "java",
+              "content": "class Student {\n    private String name;\n    private int age;\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    public void study() {\n        System.out.println(name + \" is studying\");\n    }\n}\n\n// Tạo các object từ class Student\nStudent student1 = new Student(\"John\", 20);\nStudent student2 = new Student(\"Mary\", 21);\n\nstudent1.study(); // Output: John is studying\nstudent2.study(); // Output: Mary is studying"
+            }
+          },
+          {
+            "h2": "5-6. Access Modifiers",
+            "p": "Access modifiers xác định phạm vi truy cập của các thành phần trong class.",
+            "code": {
+              "title": "Access Modifiers Example",
+              "language": "java",
+              "content": "public class AccessExample {\n    private String privateVar;     // Chỉ truy cập trong class\n    protected String protectedVar; // Truy cập trong package và lớp con\n    String defaultVar;            // Truy cập trong package\n    public String publicVar;      // Truy cập ở mọi nơi\n    \n    private void privateMethod() { }\n    protected void protectedMethod() { }\n    void defaultMethod() { }\n    public void publicMethod() { }\n}"
+            }
+          },
+          {
+            "h2": "7-8. Override và Overload",
+            "p": "Override và Overload là hai cách thể hiện tính đa hình trong Java.",
+            "code": {
+              "title": "Override vs Overload Example",
+              "language": "java",
+              "content": "class Animal {\n    public void makeSound() {\n        System.out.println(\"Some sound\");\n    }\n}\n\nclass Cat extends Animal {\n    @Override // Override - Ghi đè phương thức của lớp cha\n    public void makeSound() {\n        System.out.println(\"Meow\");\n    }\n    \n    // Overload - Cùng tên phương thức nhưng khác tham số\n    public void makeSound(String mood) {\n        System.out.println(\"Meow \" + mood);\n    }\n}"
+            }
+          },
+          {
+            "h2": "9-10. Static và Abstract",
+            "p": "Static methods thuộc về class và không thể override. Abstract classes định nghĩa template cho các lớp con.",
+            "code": {
+              "title": "Static và Abstract Example",
+              "language": "java",
+              "content": "abstract class Vehicle {\n    // Static method - không thể override\n    public static void showInfo() {\n        System.out.println(\"This is a vehicle\");\n    }\n    \n    // Abstract method - phải được override\n    abstract void start();\n    \n    // Regular method\n    public void stop() {\n        System.out.println(\"Vehicle stopped\");\n    }\n}"
+            }
+          },
+          {
+            "h2": "11-15. Interface",
+            "p": "Interface định nghĩa một contract mà các class phải tuân theo.",
+            "code": {
+              "title": "Interface Example",
+              "language": "java",
+              "content": "interface Flyable {\n    // Constants\n    final int MAX_SPEED = 100;\n    \n    // Abstract methods\n    void fly();\n    void land();\n}\n\ninterface Swimmable {\n    void swim();\n}\n\n// Implement nhiều interface\nclass Duck implements Flyable, Swimmable {\n    @Override\n    public void fly() {\n        System.out.println(\"Duck is flying\");\n    }\n    \n    @Override\n    public void land() {\n        System.out.println(\"Duck is landing\");\n    }\n    \n    @Override\n    public void swim() {\n        System.out.println(\"Duck is swimming\");\n    }\n}"
+            }
+          },
+          {
+            "h2": "16-20. Các Khái Niệm Khác",
+            "list": [
+              "Constructor không bắt buộc phải khai báo",
+              "Final class không thể kế thừa",
+              "Final method không thể override",
+              "Final variable không thể thay đổi giá trị",
+              "Static members thuộc về class không phải object"
+            ],
+            "code": {
+              "title": "Các Khái Niệm Khác Example",
+              "language": "java",
+              "content": "final class FinalClass { // Không thể kế thừa\n    final int MAX_VALUE = 100; // Không thể thay đổi\n    \n    final void finalMethod() { // Không thể override\n        System.out.println(\"This is final\");\n    }\n    \n    static int count = 0; // Thuộc về class\n    static void increment() {\n        count++;\n    }\n}"
+            }
+          },
+          {
+            "blockquote": "Hiểu rõ các khái niệm OOP không chỉ giúp bạn vượt qua phỏng vấn mà còn là nền tảng để trở thành một lập trình viên Java giỏi. Hãy thực hành các ví dụ và áp dụng chúng vào dự án thực tế."
+          }
+        ]
+      }
+    }
+  ],
+  "tags": {
+    "languages": [
+      "JavaScript",
+      "TypeScript", 
+      "Python",
+      "Java",
+      "Dart",
+      "Kotlin",
+      "Swift"
+    ],
+    "frontend": [
+      "React",
+      "Vue",
+      "Angular",
+      "Flutter",
+      "HTML",
+      "CSS",
+      "Responsive Design",
+      "UI/UX"
+    ],
+    "backend": [
+      "Node.js",
+      "Spring Boot",
+      "Django",
+      "Express",
+      "RESTful API",
+      "GraphQL",
+      "Microservices"
+    ],
+    "mobile": [
+      "Flutter",
+      "React Native",
+      "iOS",
+      "Android",
+      "Mobile Development"
+    ],
+    "devops": [
+      "Docker",
+      "Kubernetes",
+      "CI/CD",
+      "AWS",
+      "Azure",
+      "DevOps"
+    ],
+    "database": [
+      "MongoDB",
+      "PostgreSQL", 
+      "MySQL",
+      "Firebase",
+      "Redis"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "IntelliJ IDEA",
+      "Postman"
+    ],
+    "concepts": [
+      "Clean Code",
+      "Design Patterns",
+      "Testing",
+      "Security",
+      "Performance",
+      "Architecture"
+    ],
+    "soft_skills": [
+      "Project Management",
+      "Team Collaboration",
+      "Problem Solving",
+      "Technical Writing"
+    ]
+  }
+}
