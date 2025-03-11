@@ -10,15 +10,38 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final resumeFuture = ResumeService.getResume();
+
     return FutureBuilder<Resume>(
-      future: ResumeService.getResume(),
+      future: resumeFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
+          return const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(),
+                SizedBox(height: 10),
+                Text("Loading your portfolio..."),
+              ],
+            ),
+          );
         }
 
         if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text('Error: ${snapshot.error}'),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () => ResumeService.getResume(),
+                  child: const Text('Retry'),
+                ),
+              ],
+            ),
+          );
         }
 
         final resume = snapshot.data!;
@@ -28,5 +51,46 @@ class HomeScreen extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+// Responsive Layout Helper
+class ResponsiveLayout {
+  // Devices smaller than 650px are considered mobile
+  static bool isMobile(BuildContext context) =>
+      MediaQuery.of(context).size.width < 650;
+
+  // Devices between 650px and 1100px are considered tablets
+  static bool isTablet(BuildContext context) =>
+      MediaQuery.of(context).size.width < 1100 &&
+      MediaQuery.of(context).size.width >= 650;
+
+  // Devices larger than 1100px are considered desktops
+  static bool isDesktop(BuildContext context) =>
+      MediaQuery.of(context).size.width >= 1100;
+}
+
+// Responsive Widget for Layout Management
+class ResponsiveWidget extends StatelessWidget {
+  final Widget mobile;
+  final Widget? tablet;
+  final Widget desktop;
+
+  const ResponsiveWidget({
+    super.key,
+    required this.mobile,
+    this.tablet,
+    required this.desktop,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    if (ResponsiveLayout.isDesktop(context)) {
+      return desktop;
+    } else if (ResponsiveLayout.isTablet(context)) {
+      return tablet ?? mobile;
+    } else {
+      return mobile;
+    }
   }
 }
