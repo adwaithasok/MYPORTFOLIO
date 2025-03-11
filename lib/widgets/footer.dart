@@ -43,7 +43,7 @@ class Footer extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Our mission is to equip modern explorers with cutting-edge, functional, and stylish bags that elevate every adventure.',
+                      "My mission is to build innovative mobile apps that enhance everyday life, while fueling my passion for  the art and adrenaline of motography through my lens.",
                       style: TextStyle(
                         color: Colors.grey[400],
                         height: 1.6,
@@ -54,35 +54,35 @@ class Footer extends StatelessWidget {
               ),
               const SizedBox(width: 64),
               // About Links
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildFooterTitle('About'),
-                    _buildFooterLink('About Us'),
-                    _buildFooterLink('Blog'),
-                    _buildFooterLink('Career'),
-                  ],
-                ),
-              ),
+              // Expanded(
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       _buildFooterTitle('About'),
+              //       _buildFooterLink('About Us'),
+              //       _buildFooterLink('Blog'),
+              //       _buildFooterLink('Career'),
+              //     ],
+              //   ),
+              // ),
               // Support Links
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    _buildFooterTitle('Support'),
-                    _buildFooterLink('Contact Us'),
-                    _buildFooterLink('Return'),
-                    _buildFooterLink('FAQ'),
-                  ],
-                ),
-              ),
+              // Expanded(
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       _buildFooterTitle('Support'),
+              //       _buildFooterLink('Contact Us'),
+              //       _buildFooterLink('Return'),
+              //       _buildFooterLink('FAQ'),
+              //     ],
+              //   ),
+              // ),
               // Get Updates Section
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildFooterTitle('Get Updates'),
+                    _buildFooterTitle('Get in tuch'),
                     const SizedBox(height: 16),
                     _buildEmailSubscribe(),
                     const SizedBox(height: 24),
@@ -105,9 +105,9 @@ class Footer extends StatelessWidget {
               ),
               Row(
                 children: [
-                  _buildFooterSmallLink('Privacy Policy'),
-                  const SizedBox(width: 24),
-                  _buildFooterSmallLink('Terms of Service'),
+                  // _buildFooterSmallLink('Privacy Policy'),
+                  // const SizedBox(width: 24),
+                  // _buildFooterSmallLink('Terms of Service'),
                 ],
               ),
             ],
