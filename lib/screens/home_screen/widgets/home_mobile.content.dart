@@ -544,7 +544,7 @@ class HomeMobileContent extends StatelessWidget {
                   child: Text(
                     name,
                     style: GoogleFonts.spaceGrotesk(
-                      fontSize: 19,
+                      fontSize: 15,
                       fontWeight: FontWeight.w500,
                     ),
                     overflow: TextOverflow.ellipsis,
