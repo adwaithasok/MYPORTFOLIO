@@ -1,0 +1,385 @@
+{
+  "personal": {
+    "name": "Adwaith asok",
+    "title": "Flutter Developer",
+    "location": "Bengaluru",
+    "image": "assets/images/avatar.jpg",
+    "email": "adwaithdeva@gmail.com",
+    "phone": "9746543560",
+    "social": [
+      {
+        "name": "github",
+        "url": "https://github.com/adwaithasok",
+        "isActive": true,
+        "icon": "assets/icons/github.svg"
+      },
+      {
+        "name": "facebook",
+        "url": "",
+        "isActive": false,
+        "icon": "assets/icons/facebook.svg"
+      },
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/adwaithasok/",
+        "isActive": false,
+        "icon": "assets/icons/linkedin.svg"
+      }
+    ]
+  },
+  "summary": "Passionate Flutter developer with 3+ years of experience building high-performance, user-centric mobile applications for Android and iOS. Proficient in Dart and Flutter’s rich widget library, I specialize in crafting seamless, responsive interfaces that prioritize intuitive design and smooth performance. Skilled in collaborating with cross-functional teams, I drive projects from concept to deployment, ensuring top-quality results and timely delivery. Committed to continuous innovation, I stay ahead of industry trends to create cutting-edge mobile solutions that enhance user experiences and meet business goals.",
+  "education": [
+    {
+      "school": "Government Technical High School Vadakara",
+      "degree": "THSLC with automobile engineering,",
+      "period": "2015",
+      "summary": [
+        "10th-grade class program that includes additional focus on automobile education"
+      ]
+    },{
+      "school": "Kerala Government Polytechnic College",
+      "degree": "Diploma in computer engineering,",
+      "period": "2015",
+      "summary": [
+        "Completed a 3-year Diploma in Computer Engineering with hands-on practical labs, Android mobile development,"
+      ]
+    }
+  ],
+  "experience":[
+    {
+      "company": "Indo-Sakura Software Japan 株式会社",
+      "role": "Software Developer",
+      "period": "February 2025 - Present",
+      "location": "Bengaluru, Karnataka, India",
+      "skills": [
+        "Flutter",
+        "Bloc",
+        "Riverpod",
+        "Provider",
+        "CI/CD",
+        "Fastlane",
+        "GitHub Actions",
+        "Agile",
+        "Scrum",
+        "Animations",
+        "JIRA"
+      ],
+      "responsibilities": [
+        "Implemented state management using Bloc, Riverpod, and Provider.",
+        "Managed CI/CD pipelines with Fastlane & GitHub Actions for app releases.",
+        "Enhanced UI/UX with animations and followed Agile & Scrum practices."
+      ]
+    },
+    {
+      "company": "Superior Codelabs",
+      "role": "Flutter Developer",
+      "period": "December 2022 - February 2025",
+      "location": "Bengaluru, Karnataka, India",
+      "skills": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Android SDK",
+        "State Management",
+        "UI/UX",
+        "Code Optimization",
+        "Mentorship"
+      ],
+      "responsibilities": [
+        "Developed and maintained cross-platform mobile applications.",
+        "Implemented new features and optimized app performance.",
+        "Collaborated with backend developers and UI/UX designers.",
+        "Conducted code reviews and mentored junior developers."
+      ]
+    },
+    {
+      "company": "StackaTech Info Labs Pvt Ltd.",
+      "role": "Flutter Android Developer",
+      "period": "December 2021 - November 2022",
+      "location": "Kozhikode, Kerala, India",
+      "skills": [
+        "Flutter",
+        "Dart",
+        "Firebase",
+        "Android Development",
+        "State Management",
+        "UI/UX"
+      ],
+      "responsibilities": [
+        "Developed and maintained Android applications using Flutter.",
+        "Integrated Firebase services for authentication and cloud storage.",
+        "Improved UI/UX and app performance optimization."
+      ]
+    }
+  ]
+  ,
+"projects": [
+  {
+    "name": "Matrimony App Development",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Provider",
+      "REST API",
+      "Chat Functionality",
+      "OTP Verification",
+      "Custom Widgets"
+    ],
+    "summary": [
+      "A feature-rich matrimony application with responsive UI, seamless animations, real-time chat, and advanced search filters for personalized matchmaking."
+    ],
+    "details": [
+      {
+        "title": "Overview",
+        "items": [
+          "Created a matrimony app with a user-friendly interface and seamless experience across various devices. The app incorporates adaptive animations, robust state management, and secure user communication features."
+        ]
+      },
+      {
+        "title": "Key Features",
+        "items": [
+          "Responsive UI with adaptive animations for smooth navigation across devices",
+          "Provider-based architecture for efficient state management and performance",
+          "Interactive form fields with input validation for smoother user onboarding",
+          "Real-time chat with read receipts, availability indicators, and enhanced communication",
+          "Advanced search filters and personalized recommendations based on user preferences",
+          "OTP-based mobile number verification for secure user login and registration"
+        ]
+      },
+      {
+        "title": "Technical Achievements",
+        "items": [
+          "Collaborated with backend developers to optimize data flow and integrate REST APIs",
+          "Designed reusable widgets like custom text fields, gradient buttons, and animated indicators",
+          "Enhanced user engagement with smooth chat and communication features"
+        ]
+      }
+    ],
+    "thumbnail": "assets/images/matrimony_app.png",
+    "link": "",
+    "features": [
+      {
+        "title": "Real-time Chat",
+        "description": "Secure and intuitive chat functionality with real-time messaging, read receipts, and user availability indicators."
+      },
+      {
+        "title": "Advanced Search & Recommendations",
+        "description": "Filters and recommendations based on user preferences, enhancing the matchmaking process."
+      },
+      {
+        "title": "Seamless UI/UX",
+        "description": "A responsive and adaptive UI with smooth animations, providing a seamless experience across devices."
+      },
+      {
+        "title": "Enhanced Security",
+        "description": "OTP-based mobile verification system for secure account creation and login."
+      }
+    ],
+    "showOnHome": true,
+    "stats": {
+      "developmentTime": "Ongoing since Dec 2022",
+      "teamSize": "Collaborating with backend developers",
+      "platform": "Android & Ios",
+      "status": ""
+    }
+  },
+  {
+    "name": "Koala Pet E-commerce App",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Google Maps API",
+      "Social Login Integration",
+      "Geolocation Services"
+    ],
+    "summary": [
+      "An e-commerce app for pet products that integrates social logins, geolocation services, and real-time delivery tracking for an enhanced shopping experience."
+    ],
+    "details": [
+      {
+        "title": "Overview",
+        "items": [
+          "Designed and developed an e-commerce application for the pet industry, integrating social logins and geolocation features to improve user experience and streamline shopping."
+        ]
+      },
+      {
+        "title": "Core Features",
+        "items": [
+          "Social logins with Facebook, Google, and Apple for simplified onboarding",
+          "Geolocation services for locating nearby stores and tracking delivery",
+          "Real-time delivery tracking integrated with Google Maps API"
+        ]
+      }
+    ],
+    "thumbnail": "assets/images/koala_pet.png",
+    "link": "",
+    "features": [
+      {
+        "title": "Social Logins",
+        "description": "Integrates Facebook, Google, and Apple for easy user authentication."
+      },
+      {
+        "title": "Geolocation Services",
+        "description": "Helps users find nearby pet stores and track deliveries in real-time using Google Maps."
+      }
+    ],
+    "showOnHome": true,
+    "stats": {
+      "developmentTime": "Ongoing",
+      "teamSize": "1 Member",
+      "platform": "Android & Ios",
+      "status": "Completed"
+    }
+  },
+  {
+    "name": "FX Managers Live Market App",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Push Notifications",
+      "Real-time Data Integration"
+    ],
+    "summary": [
+      "A live market monitoring app that provides up-to-the-minute financial market data with push notifications for important market updates."
+    ],
+    "details": [
+      {
+        "title": "Overview",
+        "items": [
+          "Developed an app for financial market monitoring, providing users with real-time data and significant market updates. Integrated push notifications to increase user engagement."
+        ]
+      },
+      {
+        "title": "Core Features",
+        "items": [
+          "Real-time financial market data updates",
+          "Push notifications for market changes and news updates",
+          "State management with Flutter's provider package"
+        ]
+      }
+    ],
+    "thumbnail": "assets/images/fx_managers.png",
+    "link": "",
+    "features": [
+      {
+        "title": "Real-time Market Data",
+        "description": "Up-to-the-minute market data that empowers users to make informed financial decisions."
+      },
+      {
+        "title": "Push Notifications",
+        "description": "Instant notifications to keep users updated on major market changes."
+      }
+    ],
+    "showOnHome": true,
+    "stats": {
+      "developmentTime": "Ongoing",
+      "teamSize": "1 Member",
+      "platform": "Android & Ios",
+      "status": "Completed"
+    }
+  },
+  {
+    "name": "Health App",
+    "skills": [
+      "Flutter",
+      "Dart",
+      "Bloc Pattern",
+      "Push Notifications",
+      "Health APIs"
+    ],
+    "summary": [
+      "A health and fitness app that integrates step counting, calories burned, distance tracking, and reminders for health-related tasks."
+    ],
+    "details": [
+      {
+        "title": "Overview",
+        "items": [
+          "Led the development of a health app that tracks step count, calories burned, and other health metrics. Integrated push notifications for reminders and goal tracking."
+        ]
+      },
+      {
+        "title": "Core Features",
+        "items": [
+          "Step counting and calories burned tracking",
+          "Push notifications for reminders on health tasks and appointments",
+          "Integration with health APIs for metrics such as steps and calories"
+        ]
+      }
+    ],
+    "thumbnail": "assets/images/health_app.png",
+    "link": "",
+    "features": [
+      {
+        "title": "Health Tracking",
+        "description": "Tracks key health metrics such as steps, calories burned, and distance traveled."
+      },
+      {
+        "title": "Reminders & Notifications",
+        "description": "Push notifications remind users of health-related tasks, appointments, and goals."
+      }
+    ],
+    "showOnHome": true,
+    "stats": {
+      "developmentTime": "Ongoing",
+      "teamSize": "1 Member",
+      "platform": "Android & Ios",
+      "status": "Completed"
+    }
+  }
+]
+,
+  "skills": {
+    "Languages": [
+      "Flutter",
+      "Dart",
+      "JavaScript",
+      "python",
+      "react",
+      "html",
+      "css",
+      "Android Studio(SDK)"
+    ],
+    "Technologies": [
+      "Flutter: Dart, Provider ,GetX",
+      "Firebase",
+      "Socket",
+      "FCM",
+      "Agora",
+      "Wordpress",
+      "Android Studio(SDK)",
+      "REST APIs",
+      "APIs, Paymet mothods(Sadad, Razorpay , PayPal)",
+      "Google AdMob",
+      "Deployment(Play Store, App Store, TestFlight)"
+    ],
+    "Tools & Softwares": [
+      "Flutter Sdk",
+      "Android Studio",
+      "VS Code",
+      "Git",
+      "Intellij",
+      "Figma",
+      "Postman",
+      "Adobe Photoshop",
+      "Adobe After Effect",
+      "Adobe Premiere Pro"     
+
+    ]
+  },
+  "certifications": [
+    {
+      "name": "Android Development",
+      "issuer": "KELTRON Advanced Studies",
+      "date": "2017-01-21",
+      "description": "Evolution of app development and its industry scope. Covered Android Studio installation, introduction to Android Studio, Java classes, source files, Android Studio tools, creating a simple app, and working with activities & samples.",
+      "link": "https://drive.google.com/file/d/0B8WzVohLdIbWNnh0aUcxTHZEMUk/view?resourcekey=0-SCJqKksjubF0f8pT_LdXDQ"
+    },
+    {
+      "name": "Android Training",
+      "issuer": "RISS Technologies",
+      "date": "2017-06-02",
+      "description": "Basics of Android development using Kotlin.",
+      "link": "https://drive.google.com/file/d/0B8WzVohLdIbWN0pQdUlxNmdzLVU/view?resourcekey=0-3lphrgxG5FqqEgcQgNpB4w"
+    }
+  ]
+}
