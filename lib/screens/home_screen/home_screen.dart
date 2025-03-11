@@ -21,8 +21,6 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CircularProgressIndicator(),
-                SizedBox(height: 10),
-                Text("Loading your portfolio..."),
               ],
             ),
           );

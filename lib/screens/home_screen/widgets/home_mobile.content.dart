@@ -6,6 +6,8 @@ import 'package:Adwaith_profolio/widgets/footer.dart';
 import 'package:Adwaith_profolio/widgets/project_detail_dialog.dart';
 import 'package:Adwaith_profolio/widgets/project_detail_dialog_mobile.dart';
 import 'package:one_context/one_context.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeMobileContent extends StatelessWidget {
   final Resume resume;
@@ -20,7 +22,7 @@ class HomeMobileContent extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          _buildMobileIntro(),
+          _buildMobileIntro(context),
           _buildMobileFeaturedWorks(context),
           _buildMobileTools(context),
           const Footer(),
@@ -29,21 +31,40 @@ class HomeMobileContent extends StatelessWidget {
     );
   }
 
-  Widget _buildMobileIntro() {
+  Widget _buildMobileIntro(context) {
     return SingleChildScrollView(
       child: Container(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           mainAxisSize:
               MainAxisSize.min, // Prevents Column from taking infinite height
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
+            Row(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                CircleAvatar(
-                  radius: 35,
-                  backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                FutureBuilder(
+                  future: precacheImage(
+                    const AssetImage('assets/images/avatar.jpg'),
+                    context,
+                  ),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.done) {
+                      return const CircleAvatar(
+                        radius: 35,
+                        backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                      );
+                    } else {
+                      return Shimmer.fromColors(
+                        baseColor: Colors.grey[300]!,
+                        highlightColor: Colors.grey[100]!,
+                        child: const CircleAvatar(
+                          radius: 35,
+                          backgroundColor: Colors.white,
+                        ),
+                      );
+                    }
+                  },
                 ),
                 SizedBox(width: 16),
                 Column(
@@ -57,7 +78,7 @@ class HomeMobileContent extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      'Fresher Mobile Developer',
+                      'Software Developer',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w500,
@@ -126,16 +147,35 @@ class HomeMobileContent extends StatelessWidget {
         child: Column(
           children: [
             ClipRRect(
-                borderRadius:
-                    const BorderRadius.vertical(top: Radius.circular(8)),
-                child: Image.asset(
-                  project.thumbnail,
-                  width: double.infinity,
-                  height: 200,
-                  fit: BoxFit.cover,
-                  // cacheWidth: 248, // Adjust this to match the display size
-                  // cacheHeight: 200,
-                )),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(8)),
+              child: FutureBuilder(
+                future: precacheImage(
+                  AssetImage(project.thumbnail),
+                  context,
+                ),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return Image.asset(
+                      project.thumbnail,
+                      width: double.infinity,
+                      height: 200,
+                      fit: BoxFit.cover,
+                    );
+                  } else {
+                    return Shimmer.fromColors(
+                      baseColor: Colors.grey[300]!,
+                      highlightColor: Colors.grey[100]!,
+                      child: Container(
+                        width: double.infinity,
+                        height: 200,
+                        color: Colors.white,
+                      ),
+                    );
+                  }
+                },
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.all(16),
               child: Column(
@@ -368,7 +408,7 @@ class HomeMobileContent extends StatelessWidget {
               ),
               _buildToolCard(
                 context: context,
-                icon: 'assets/icons/android.png',
+                icon: 'assets/icons/Android.png',
                 name: 'Android Studio',
                 description: 'Official IDE for Android development',
               ),
@@ -440,13 +480,13 @@ class HomeMobileContent extends StatelessWidget {
               ),
               _buildToolCard(
                 context: context,
-                icon: 'assets/icons/androidsdk.WEBP',
+                icon: 'assets/icons/androidsdk.webp',
                 name: 'Android SDK',
                 description: 'Development tools for Android apps',
               ),
               _buildToolCard(
                 context: context,
-                icon: 'assets/icons/deployment.WEBP',
+                icon: 'assets/icons/deployment.webp',
                 name: 'App Deployment',
                 description:
                     'Publishing and distributing applications (IOS - Android)',

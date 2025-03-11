@@ -84,11 +84,11 @@ class NavBar extends StatelessWidget {
                 child: const Text('Download CV'),
               ),
             ),
-            // if (!isDesktop)
-            //   IconButton(
-            //     icon: const Icon(Icons.menu),
-            //     onPressed: () => Scaffold.of(context).openEndDrawer(),
-            //   ),
+            if (!isDesktop)
+              IconButton(
+                icon: const Icon(Icons.menu),
+                onPressed: () => Scaffold.of(context).openEndDrawer(),
+              ),
           ]),
         ],
       ),
